@@ -16,9 +16,9 @@ vcpkg_check_features(OUT_FEATURE_OPTIONS FEATURE_OPTIONS
         aom         WITH_AOM_DECODER
         aom         WITH_AOM_ENCODER
         aom         VCPKG_LOCK_FIND_PACKAGE_AOM
-		tools       WITH_EXAMPLES
-		tools       WITH_EXAMPLE_HEIF_THUMB
-		dav1d       WITH_DAV1D
+        tools       WITH_EXAMPLES
+        tools       WITH_EXAMPLE_HEIF_THUMB
+        dav1d       WITH_DAV1D
         dav1d       VCPKG_LOCK_FIND_PACKAGE_DAV1D
         gdk-pixbuf  WITH_GDK_PIXBUF
         hevc        WITH_X265
