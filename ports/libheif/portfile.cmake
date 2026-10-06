@@ -16,6 +16,8 @@ vcpkg_check_features(OUT_FEATURE_OPTIONS FEATURE_OPTIONS
         aom         WITH_AOM_DECODER
         aom         WITH_AOM_ENCODER
         aom         VCPKG_LOCK_FIND_PACKAGE_AOM
+		tools       WITH_EXAMPLES
+		tools       WITH_EXAMPLE_HEIF_THUMB
 		dav1d       WITH_DAV1D
         dav1d       VCPKG_LOCK_FIND_PACKAGE_DAV1D
         gdk-pixbuf  WITH_GDK_PIXBUF
@@ -82,6 +84,17 @@ vcpkg_cmake_configure(
         VCPKG_LOCK_FIND_PACKAGE_ZLIB
 )
 vcpkg_cmake_install()
+if ("tools" IN_LIST FEATURES)
+    vcpkg_copy_tools(
+        TOOL_NAMES
+            heif-dec
+            heif-enc
+            heif-info
+            heif-test
+            heif-thumbnailer
+        AUTO_CLEAN
+    )
+endif()
 vcpkg_copy_pdbs()
 vcpkg_cmake_config_fixup(CONFIG_PATH "lib/cmake/libheif")
 vcpkg_fixup_pkgconfig()
@@ -120,4 +133,11 @@ if(maybe_plugins STREQUAL "")
     file(REMOVE_RECURSE "${CURRENT_PACKAGES_DIR}/plugins" "${CURRENT_PACKAGES_DIR}/debug/plugins")
 endif()
 
-vcpkg_install_copyright(FILE_LIST "${SOURCE_PATH}/COPYING")
+vcpkg_install_copyright(
+    FILE_LIST
+        "${SOURCE_PATH}/COPYING"
+        "${SOURCE_PATH}/examples/COPYING"
+        "${SOURCE_PATH}/extra/getopt.c"
+        "${SOURCE_PATH}/extra/getopt.h"
+        "${SOURCE_PATH}/extra/getopt_long.c"
+)

@@ -3,7 +3,7 @@
   "version": "1.23.6",
   "description": "libheif is an HEIF and AVIF file format decoder and encoder.",
   "homepage": "http://www.libheif.org/",
-  "license": "LGPL-3.0-only AND MIT",
+  "license": "LGPL-3.0-only AND BSD-4-Clause AND MIT",
   "supports": "!xbox",
   "dependencies": [
     {
@@ -82,6 +82,21 @@
       "description": "libde265 HEVC decoder",
       "dependencies": [
         "libde265"
+      ]
+    },
+    "tools": {
+      "description": "Build libheif command-line tools",
+      "license": "MIT AND BSD-4-Clause",
+      "dependencies": [
+        "libjpeg-turbo",
+        "libpng",
+        "libwebp",
+        {
+          "name": "tiff",
+          "features": [
+            "webp"
+          ]
+        }
       ]
     },
     "openjpeg": {
