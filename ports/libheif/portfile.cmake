@@ -8,6 +8,7 @@ vcpkg_from_github(
         cxx-linkage-pkgconfig.diff
         find-modules.diff
         gdk-pixbuf.patch
+        install-heif-test.patch
         symbol-exports.diff
 )
 
