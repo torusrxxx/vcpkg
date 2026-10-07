@@ -1,8 +1,0 @@
-diff --git a/examples/CMakeLists.txt b/examples/CMakeLists.txt
-index 0000000..0000000 100644
---- a/examples/CMakeLists.txt
-+++ b/examples/CMakeLists.txt
-@@ -148,2 +148,3 @@
- endif()
- target_link_libraries(heif-test heif)
-+install(TARGETS heif-test RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR})

@@ -8,7 +8,6 @@ vcpkg_from_github(
         cxx-linkage-pkgconfig.diff
         find-modules.diff
         gdk-pixbuf.patch
-        install-heif-test.patch
         symbol-exports.diff
 )
 
@@ -91,7 +90,6 @@ if ("tools" IN_LIST FEATURES)
             heif-dec
             heif-enc
             heif-info
-            heif-test
             heif-thumbnailer
         AUTO_CLEAN
     )
