@@ -11196,6 +11196,10 @@
       "baseline": "4.3",
       "port-version": 0
     },
+    "xevd": {
+      "baseline": "0.8.0",
+      "port-version": 0
+    },
     "x509cert-banned": {
       "baseline": "2022-04-19",
       "port-version": 0
